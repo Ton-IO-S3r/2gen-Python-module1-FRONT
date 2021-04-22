@@ -238,6 +238,9 @@ footer div.footer-logo-container{
 footer p{
   width: 35%;
 }
+footer div.footer-icons-container{
+  margin: 0px 0 50px 0;
+}
 footer img.ico{
   width: 35px;
   height: 35px;
@@ -248,14 +251,14 @@ footer img.ico{
 
 @media screen and (min-width: 1024px) {
   /* Header */
-header{
-  padding: 10px 30px;
-  text-align: left;
-}
+
 nav#header{
   margin: 25px auto;
   padding: 10px 30px;
   
+}
+nav#header ul div.links-container{
+  display: block;
 }
 #list-header{
   align-items: center;
