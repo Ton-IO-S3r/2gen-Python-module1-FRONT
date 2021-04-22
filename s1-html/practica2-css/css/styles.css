@@ -4,65 +4,71 @@
   box-sizing: border-box;
 }
 body{
-  width: 90%;
-  margin: 0 auto;
+  width: 100%;
   text-align: center;
 }
 a{text-decoration: none;}
 
-/* Header */
 header{
   background-color: greenyellow;
   padding: 10px 30px;
   border-radius: 10px;
-  /* height: 100px; */
-  text-align: left;
+
 }
+
 nav#header{
-  margin: 25px auto;
+  margin: 15px auto;
   background-color: rgb(58, 237, 38);
-  /* height: 50px; */
-  padding: 10px 30px;
+  padding: 5px 10px;
   border-radius: 10px;
-  display: flexbox;
+  display: flex;
   justify-content: space-between;
+  height: 70px;
 }
 #list-header{
   display: flex;
   list-style-type: none;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 30px;
-}
-#logo-header img{
-  width: 50px;
-  height: 50px;
-}
-#list-header div{
-  display: flex;
-  margin: 0 10px;
+  padding: 10px;
 }
 #list-header li{
   background-color: gray;
-  border-radius: 5px;
-  width: 60px;
-  height: 30px;
+  
+/*   width: 60px;
+  height: 30px; */
 }
+nav#header ul div.links-container{
+  display: none;
+}
+.logo-container{
+  background-color: gray;
+  border-radius: 5px; 
+  width: 50px;
+  height: 50px;
+}
+/* #list-header div{
+  display: flex;
+  margin: 0 10px;
+}
+
 #list-header div li{
   margin: 0 10px;
+  background-color: gray;
+  border-radius: 5px;
 }
 #list-header div li img{
   width: 50px;
   height: 50px;
   border-radius: 50px;
-}
+} */
 
 /* CONTENT */
 main{
-  width: 100%;
+  width: 90%;
   padding: 20px 30px;
-  display: flex;
-  justify-content: center;
+  /* display: flex;
+  justify-content: center; */
 }
 aside{
   background-color:rgb(46, 46, 46);
@@ -70,33 +76,27 @@ aside{
   border-radius: 10px;
   padding: 30px 20px;
   color: white;
-  text-align: center;  
-}
-aside nav{
-  width: 80%;
-  margin: 0 auto;
+  text-align: center;
+  display: none;
 }
 
-aside nav ul li{
-  list-style-type: none;
-  background-color: white;
-  width: 80%;
-  height: 40px;
-  margin: 30px auto;
-  border-radius: 10px;
-}
 main section{
   display: flex;
   flex-wrap: wrap;
-  width: 75%;
+  width: 100%;
+  justify-content: center;
 }
 article{
-  width: 40%;
-  height: 200px;
-  margin: 40px 50px;
-  padding:25px;
+  width: 90%;
+  height: 250px;
+  margin: 20px auto;
+  padding: 20px;
   border-radius: 10px;
-  text-align: left;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
 }
 article.yellow{
   background-color: rgb(255, 230, 0);
@@ -110,26 +110,27 @@ article.orange{
 article.purple{
   background-color: rgb(166, 73, 202);
 }
-article h2,p,img{
+article h2, article p, article img{
   color: white;
   border-radius: 5px;
 }
 article p{
   font-size: 18px;
   width: 70%;
+  margin: 10px auto;
   text-align: justify;
 }
 article div{
-  margin-top: 25px;
+  margin-top: 5px;
   display: flex;
-  justify-content: flex-end;
-  align-items:flex-end;
+  justify-content: space-between;
+  align-items:center;
+  width: 60%;
 }
 article div img{
   background-color: white;
   width: 35px;
   height: 35px;
-  margin-left: 25px;
   border-radius: 50%;
   border: none;
 }
@@ -139,30 +140,212 @@ article div img{
 footer{
   background-color: rgb(175, 245, 118);
   color: rgb(101, 102, 101);
-  padding: 30px 50px;
-  height: 150px;
+  padding: 10px 15px;
   margin: 50px 25px;
   border-radius: 10px;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items:flex-end;
+  align-items:center;
+  flex-wrap: wrap;
+  position: relative;
 }
-footer div.logo{
+footer div.footer-logo-container{
   border-radius: 50%;
   background-color: gray;
+  width: 90px;
+  height: 90px;
+  margin: 50px 0 10px 0;
+}
+footer div.footer-icons-container{
+  margin: 0px 0 150px 0;
+}
+footer p{
+  width: 100%;
+  font-size: 20px;
+  color: gray;
+  position: absolute;
+  margin-bottom: 25px;
+  bottom: 0;
+}
+footer img.ico{
+  background-color: gray;
+  width: 25px;
+  height: 25px;
+  margin: 5px;
+  border-radius: 50%;
+  border: none;
+}
+
+/* Media Queries */
+@media screen and (min-width: 768px) {
+header{
+  text-align: left;
+}
+
+/* CONTENT */
+main{
+  width: 100%;
+  padding: 20px 10px;
+  
+}
+main section{
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 0 auto;
+}
+article{
+  width: 45%;
+  height: 200px;
+  margin: 30px 10px;
+  padding:10px;
+  align-items: flex-start;
+}
+
+article h2,p,img{
+  border-radius: 5px;
+}
+article h2{
+  margin-top: 20px;
+}
+article p{
+  width: 90%;
+  margin: 10px 0px;
+}
+article div{
+  margin-top: 25px;
+  width: 100%;
+  justify-content: flex-end;
+}
+article div img{
+  width: 35px;
+  height: 35px;
+  margin-left: 25px;
+}
+
+/* FOOTER */
+
+footer{
+  padding: 30px 50px;
+  height: 150px;
+  margin: 50px 25px;
+}
+footer div.footer-logo-container{
+  width: 90px;
+  height: 90px;
+  margin:0;
+}
+footer p{
+  width: 35%;
+}
+footer img.ico{
+  width: 35px;
+  height: 35px;
+  margin-left: 25px;
+
+}
+}
+
+@media screen and (min-width: 1024px) {
+  /* Header */
+header{
+  padding: 10px 30px;
+  text-align: left;
+}
+nav#header{
+  margin: 25px auto;
+  padding: 10px 30px;
+  
+}
+#list-header{
+  align-items: center;
+  padding: 20px 30px;
+}
+
+#list-header div{
+  margin: 0 10px;
+}
+#list-header li{
+  width: 60px;
+  height: 30px;
+}
+#list-header div li{
+  margin: 0 10px;
+}
+#list-header div li img{
+  width: 50px;
+  height: 50px;
+}
+
+/* CONTENT */
+main{
+  width: 100%;
+  padding: 20px 30px;
+  
+}
+aside{
+  width: 25%;
+  padding: 30px 20px;
+  text-align: center;  
+}
+aside nav{
+  width: 80%;
+  margin: 0 auto;
+}
+
+aside nav ul li{
+  width: 80%;
+  height: 40px;
+  margin: 30px auto;
+  
+}
+main section{
+  flex-wrap: wrap;
+  width: 75%;
+}
+article{
+  width: 40%;
+  height: 200px;
+  margin: 40px 50px;
+  padding:25px;
+  text-align: left;
+}
+
+article h2,p,img{
+  border-radius: 5px;
+}
+article p{
+  width: 70%;
+  text-align: justify;
+}
+article div{
+  margin-top: 25px;
+}
+article div img{
+  width: 35px;
+  height: 35px;
+  margin-left: 25px;
+}
+
+/* FOOTER */
+
+footer{
+  padding: 30px 50px;
+  height: 150px;
+  margin: 50px 25px;
+}
+footer div.logo{
   width: 90px;
   height: 90px;
 }
 footer p{
   width: 20%;
-  font-size: 20px;
-  color: gray;
+
 }
 footer img.ico{
-  background-color: gray;
   width: 35px;
   height: 35px;
   margin-left: 25px;
-  border-radius: 50%;
-  border: none;
+
+}
 }

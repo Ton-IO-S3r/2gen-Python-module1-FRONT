@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 80%;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.square,
+.circle {
+  width: 300px;
+  height: 300px;
+  border: 2px solid blue;
+  text-align: center;
+  margin: 25px;
+}
+.circle {
+  border-radius: 50%;
+  border: 2px solid red;
+}
+/* TABLET */
+@media screen and (min-width: 768px) {
+    .square,.circle{
+        width: 250px;
+        height: 250px;
+    }
+    main{
+        justify-content: space-between;
+    }
+
+}
+/* DESKTOP */
+@media screen and (min-width: 1024px){
+    main{
+        max-width: 750px;
+        position: absolute;
+        top: calc(50vh - 225px);
+        left: calc(50vw - 375px);
+        justify-content: flex-start;
+    }
+    .square,.circle{
+        width: 200px;
+        height: 200px;
+    }
+    main div:nth-last-of-type(){
+        background-color: green;
+    }
+}
